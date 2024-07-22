@@ -1,28 +1,36 @@
 package f_21_Conector;
 
+//! Codigo ya copiado
+
 public class Ciclo {
-        String nombre;
-        int id;
-    //Constructor de ciclo
-    Ciclo(int id, String nombre) {
+    
+    // Atributo que almacena el ID del ciclo
+    private int id;
+    // Atributo que almacena el nombre del ciclo
+    private String nombre;
+
+    // Constructor que inicializa un ciclo con un ID y un nombre
+    public Ciclo(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
 
-    //Setters and getters de Id
+    // Método para obtener el ID del ciclo
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    //Setters and getters de Nombre
+    // Método para obtener el nombre del ciclo
     public String getNombre() {
         return nombre;
     }
 
+    // Método para establecer el ID del ciclo
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    // Método para establecer el nombre del ciclo
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
