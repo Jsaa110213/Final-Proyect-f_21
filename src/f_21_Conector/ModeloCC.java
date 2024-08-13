@@ -5,8 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-//!Codigo ya copiado
-
+// Clase ModeloCC que extiende la clase Conexion para manejar operaciones sobre la tabla ciclo_cuatri
 public class ModeloCC extends Conexion {
 
     // Lista para almacenar los objetos CC (relación entre Ciclo y Cuatrimestre)
@@ -105,8 +104,7 @@ public class ModeloCC extends Conexion {
 
             // Verificar si el nuevo ID ya existe
             String sqlCheck = "SELECT COUNT(*) FROM ciclo_cuatri WHERE id = ?";
-            PreparedStatement psCheck = cnx.prepareStatement(sqlCheck); // Preparar la consulta SQL para verificar
-                                                                        // existencia
+            PreparedStatement psCheck = cnx.prepareStatement(sqlCheck); // Preparar la consulta SQL para verificar existencia
             psCheck.setInt(1, nuevoId); // Establecer el nuevo ID a verificar
             ResultSet rsCheck = psCheck.executeQuery(); // Ejecutar la consulta y obtener el resultado
             rsCheck.next();
@@ -124,8 +122,7 @@ public class ModeloCC extends Conexion {
             ps.setInt(4, idActual); // Establecer el ID actual del registro
             ps.executeUpdate(); // Ejecutar la actualización
 
-            // Si el ID es cambiado, se puede necesitar eliminar el registro antiguo y crear
-            // uno nuevo
+            // Si el ID es cambiado, se puede necesitar eliminar el registro antiguo y crear uno nuevo
             if (idActual != nuevoId) {
                 Eliminar(idActual); // Eliminar el registro con el ID antiguo
             }
@@ -151,5 +148,4 @@ public class ModeloCC extends Conexion {
             desconectar(); // Asegurarse de desconectar en el bloque finally
         }
     }
-
 }

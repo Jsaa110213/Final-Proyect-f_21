@@ -1,10 +1,11 @@
 package f_21_Conector;
 
-//! Codigo ya copiado
-
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
+// Clase ModeloCuatri extiende de la clase Conexion para utilizar sus métodos de conexión
 public class ModeloCuatri extends Conexion {
 
     // Lista para almacenar los objetos Cuatrimestre
@@ -127,7 +128,19 @@ public class ModeloCuatri extends Conexion {
             desconectar();
         }
     }
-}
 
-// ! CREAR Y SUBIR A GITHUB EL REPOSITORIO DE ESTE PROYECTO, Y ADEMAS DE AÑADIR
-// AL CODIGO SOLO LA CARPETA img y su contenido y el archivo README.md
+    public void Consultar() {
+        listarCuatrimestres(); // Llamar al método para listar ciclos
+        // Imprimir en formato de tabla
+        System.out.println("+----+--------------+");
+        System.out.println("|    CUATRIMESTRES  |");
+        System.out.println("+----+--------------+");
+        System.out.println("| ID | Cuatrimestre |");
+        System.out.println("+----+--------------+");
+        for (Cuatrimestre cuatrimestre : carteraCuatrimestre) {
+            // Mostrar los detalles del ciclo en formato de tabla
+            System.out.printf("| %-2d | %-12s |\n", cuatrimestre.getId(), cuatrimestre.getNombre());
+        }
+        System.out.println("+----+--------------+");
+    }
+}

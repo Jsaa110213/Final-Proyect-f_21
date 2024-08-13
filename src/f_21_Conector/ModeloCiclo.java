@@ -1,17 +1,11 @@
 package f_21_Conector;
 
-//! Codigo ya copiado
-
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-//import java.util.Scanner;
-// import java.sql.PreparedStatement;
-// import java.sql.SQLException;
-// import java.util.logging.Level;
-// import java.util.logging.Logger;
 
 // Clase ModeloCiclo extiende de la clase Conexion para utilizar sus métodos de conexión
-
 public class ModeloCiclo extends Conexion {
 
     // Lista para almacenar los objetos Ciclo
@@ -142,6 +136,8 @@ public class ModeloCiclo extends Conexion {
         listarCiclos(); // Llamar al método para listar ciclos
         // Imprimir en formato de tabla
         System.out.println("+----+--------+");
+        System.out.println("|    CICLOS   |");
+        System.out.println("+----+--------+");
         System.out.println("| ID | Ciclo  |");
         System.out.println("+----+--------+");
         for (Ciclo ciclo : carteraCiclo) {
@@ -150,5 +146,4 @@ public class ModeloCiclo extends Conexion {
         }
         System.out.println("+----+--------+");
     }
-
 }

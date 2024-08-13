@@ -1,14 +1,11 @@
 package f_21_Conector;
 
-//! Codigo ya copiado
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
-import java.sql.*;
-//import java.sql.Connection;
-//import java.sql.DriverManager;
-//import java.sql.SQLException;
-
+// Clase Conexion para manejar la conexión con la base de datos
 public class Conexion {
-
     // Atributo protegido que mantiene la conexión a la base de datos
     protected Connection cnx;
 
@@ -17,10 +14,10 @@ public class Conexion {
         try {
             // Cargar el driver para la base de datos MariaDB
             Class.forName("org.mariadb.jdbc.Driver");
-            // Establecer la conexión a la base de datos usando la URL, el usuario y la
-            // contraseña
+            // Establecer la conexión a la base de datos usando la URL, el usuario y la contraseña
             this.cnx = DriverManager.getConnection("jdbc:mariadb://127.0.0.1/ce21", "root", "");
-            System.out.println("Conexión exitosa a la base de datos");
+            
+            System.out.println("Conexion exitosa a la base de datos");
         } catch (ClassNotFoundException | SQLException ex) {
             // Capturar y manejar las excepciones de clase no encontrada y SQL
             System.out.println("Error: " + ex.getMessage());
@@ -34,12 +31,11 @@ public class Conexion {
             // Verificar si la conexión no es nula y está abierta
             if (this.cnx != null && !this.cnx.isClosed()) {
                 this.cnx.close(); // Cerrar la conexión
-
+                
             }
         } catch (SQLException ex) {
             // Capturar y manejar las excepciones SQL
             System.out.println("Error al cerrar la conexión: " + ex.getMessage());
         }
     }
-
 }

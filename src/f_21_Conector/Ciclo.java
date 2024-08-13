@@ -1,9 +1,8 @@
 package f_21_Conector;
 
-//! Codigo ya copiado
-
+// Clase Ciclo que representa un ciclo en el sistema
 public class Ciclo {
-    
+
     // Atributo que almacena el ID del ciclo
     private int id;
     // Atributo que almacena el nombre del ciclo

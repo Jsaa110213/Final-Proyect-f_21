@@ -1,10 +1,9 @@
 package f_21_Conector;
+
 import java.util.Scanner;
 
-//! Codigo ya copiado
-
+// Clase GestorCiclos extiende ModeloCiclo para usar sus métodos de CRUD
 public class GestorCiclos extends ModeloCiclo {
-
 
     // Instancia de Scanner para leer la entrada del usuario
     Scanner scanner = new Scanner(System.in);
@@ -15,7 +14,7 @@ public class GestorCiclos extends ModeloCiclo {
         do {
             // Mostrar el menú de opciones
             System.out.println("Bienvenido al menu de ciclos");
-            System.out.println("\n--- Gestor de Ciclos ---");
+            System.out.println("\n---Gestor---de---Ciclos---");
             System.out.println("|1|. Listar ");
             System.out.println("|2|. Crear ");
             System.out.println("|3|. Leer ");
@@ -67,11 +66,12 @@ public class GestorCiclos extends ModeloCiclo {
 
     // Método para leer un ciclo por su ID utilizando el método del modelo
     public void leer() {
+        Consulta(); // Llamar al método para listar ciclos en ModeloCiclo
         System.out.print("Ingrese el ID del Ciclo que deseas consultar: "); // Solicitar el ID del ciclo
         int id = scanner.nextInt(); // Leer el ID del ciclo
         scanner.nextLine(); // Limpiar el buffer
         Ciclo ciclo = Leer(id); // Llamar al método para leer el ciclo en ModeloCiclo
-        
+
         // Imprimir en formato de tabla
         System.out.println("Consultando en la base de datos..........");
         System.out.println("+----+--------+");
@@ -89,25 +89,26 @@ public class GestorCiclos extends ModeloCiclo {
 
     // Método para actualizar un ciclo utilizando el método del modelo
     public void actualizar() {
+        Consulta(); // Llamar al método para listar ciclos en ModeloCiclo
         System.out.print("Ingrese el ID del Ciclo que deseas actualizar: "); // Solicitar el ID del ciclo a actualizar
         int id = scanner.nextInt(); // Leer el ID del ciclo
         scanner.nextLine(); // Limpiar el buffer
-        
+
         // Obtener datos actuales del ciclo
         Ciclo ciclo = Leer(id); // Llamar al método para leer el ciclo en ModeloCiclo
         if (ciclo == null) {
             System.out.println("El ciclo con el ID especificado no existe."); // Mensaje si el ciclo no existe
             return; // Salir del método
         }
-        
+
         // Leer el nuevo ID y nombre
         System.out.print("Ingrese el nuevo ID del Ciclo (dejar en blanco para no cambiar): "); // Solicitar el nuevo ID
         String nuevoIdStr = scanner.nextLine(); // Leer el nuevo ID como cadena
-        
+
         // Leer el nuevo nombre del ciclo
         System.out.print("Ingrese Nuevo nombre del Ciclo (dejar en blanco para no cambiar): "); // Solicitar el nuevo nombre
         String nuevoNombre = scanner.nextLine(); // Leer el nuevo nombre
-        
+
         // Verificar si el nuevo ID está vacío; si es así, mantener el ID actual
         int nuevoId = id;
         if (!nuevoIdStr.isEmpty()) {
@@ -132,6 +133,7 @@ public class GestorCiclos extends ModeloCiclo {
 
     // Método para eliminar un ciclo utilizando el método del modelo
     public void eliminar() {
+        Consulta(); // Llamar al método para listar ciclos en ModeloCiclo
         System.out.print("Ingrese el ID del Ciclo a eliminar: "); // Solicitar el ID del ciclo a eliminar
         int id = scanner.nextInt(); // Leer el ID del ciclo
         scanner.nextLine(); // Limpiar el buffer
@@ -142,10 +144,10 @@ public class GestorCiclos extends ModeloCiclo {
 
     // Clase principal para ejecutar el menú
     public static class Main {
+
         public static void main(String[] args) {
             GestorCiclos gestor = new GestorCiclos(); // Crear una instancia de GestorCiclos
             gestor.menu(); // Mostrar el menú y gestionar las opciones del usuario
         }
     }
-
 }

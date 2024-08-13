@@ -1,9 +1,8 @@
 package f_21_Conector;
 
-//! Codigo ya copiado
-
 // Clase CC que representa una relación entre un Ciclo y un Cuatrimestre con un identificador
 public class CC {
+    
     // Atributo que almacena el ID de la relación
     private int id;
     // Atributo que almacena el objeto Ciclo asociado a esta relación
@@ -11,8 +10,7 @@ public class CC {
     // Atributo que almacena el objeto Cuatrimestre asociado a esta relación
     private Cuatrimestre cuatri;
 
-    // Constructor que inicializa una instancia de CC con el ID, el Ciclo y el
-    // Cuatrimestre proporcionados
+    // Constructor que inicializa una instancia de CC con el ID, el Ciclo y el Cuatrimestre proporcionados
     public CC(int id, Ciclo ciclo, Cuatrimestre cuatri) {
         this.id = id;
         this.ciclo = ciclo;
@@ -50,5 +48,5 @@ public class CC {
     }
 
     // Método que devuelve una representación en cadena del objeto CC
-
+   
 }

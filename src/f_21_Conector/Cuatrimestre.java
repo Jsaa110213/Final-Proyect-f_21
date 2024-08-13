@@ -1,7 +1,6 @@
 package f_21_Conector;
 
-//! Codigo ya copiado
-
+// Clase Cuatrimestre que representa un cuatrimestre en el sistema
 public class Cuatrimestre {
 
     // Atributo que almacena el ID del cuatrimestre
@@ -34,5 +33,4 @@ public class Cuatrimestre {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
 }
